@@ -1,0 +1,79 @@
+---
+title: "Fiscal Balance, Trade Openness, and GDP in SAARC Countries (2000–2024)"
+format: html
+editor: visual
+execute: 
+  echo: false
+---
+
+
+```{r}
+#| message: false
+library(WDI)
+library(tidyverse)
+library(ggplot2)
+
+# SAARC country ISO3 codes
+saarc_countries <- c("AFG", "BGD", "BTN", "IND", "MDV", "NPL", "PAK", "LKA")
+
+# Get data for SAARC countries
+data <- WDI(
+  country = saarc_countries,
+  indicator = c(
+    "NY.GDP.MKTP.CD",      # GDP
+    "NE.TRD.GNFS.ZS",      # Trade
+    "GC.REV.XGRT.GD.ZS"    # Revenue (proxy for fiscal policy)
+  ),
+  start = 2000,
+  end = 2024,
+  extra = TRUE
+)
+
+# Clean and rename
+data <- data |>
+  rename(
+    gdp = NY.GDP.MKTP.CD,
+    trade = NE.TRD.GNFS.ZS,
+    fiscal = GC.REV.XGRT.GD.ZS
+  ) |>
+  filter(!is.na(gdp), !is.na(fiscal), !is.na(trade))
+
+# Plot
+ggplot(data, aes(x = trade, y = gdp, color = country)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Trade Openness vs. GDP in SAARC Countries (2000–2024)",
+    x = "Trade (% of GDP)",
+    y = "GDP (current US$)"
+  ) +
+  theme_minimal()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Summary** 
+Fiscal balance, trade openness, and GDP vary significantly across SAARC countries over the past two decades.
+This project explores how fiscal policy and trade patterns relate to economic output in Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka from 2000 to 2024. Using data from the World Bank’s WDI API, I cleaned and analyzed three key indicators: GDP, fiscal balance, and trade as % of GDP. The main plot reveals a strong positive association between trade openness and GDP levels, particularly in more integrated economies like India and Bangladesh.
