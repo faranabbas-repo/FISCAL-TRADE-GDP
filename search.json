@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Source",
+    "section": "",
+    "text": "The data for this project comes from the World Bank’s World Development Indicators (WDI), accessed using the WDI R package. I selected three variables: GDP in current US dollars (NY.GDP.MKTP.CD), fiscal balance as a % of GDP (GC.BAL.CASH.GD.ZS), and trade as % of GDP (NE.TRD.GNFS.ZS).\nData was retrieved for SAARC member countries: Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka, for the years 2000 to 2024.\nCleaning steps included renaming variables, filtering missing values, and excluding observations where any of the three main indicators were NA."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am Faran Abbas, a graduate student in World Economy at Shandong University. You can view my work on GitHub or contact me at faranabbas@hotmail.com.\nThis project investigates how fiscal policy and trade openness affect GDP using cross-country data from 2000–2024. You can view the repository here.\nThis project was created as a part of Kane’s Data Science Bootcamp."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fiscal Balance, Trade Openness, and GDP in SAARC Countries (2000–2024)",
+    "section": "",
+    "text": "Summary Fiscal balance, trade openness, and GDP vary significantly across SAARC countries over the past two decades. This project explores how fiscal policy and trade patterns relate to economic output in Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka from 2000 to 2024. Using data from the World Bank’s WDI API, I cleaned and analyzed three key indicators: GDP, fiscal balance, and trade as % of GDP. The main plot reveals a strong positive association between trade openness and GDP levels, particularly in more integrated economies like India and Bangladesh."
+  }
+]
