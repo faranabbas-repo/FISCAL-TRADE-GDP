@@ -18,6 +18,6 @@
     "href": "index.html",
     "title": "Fiscal Balance, Trade Openness, and GDP in SAARC Countries (2000–2024)",
     "section": "",
-    "text": "Summary Fiscal balance, trade openness, and GDP vary significantly across SAARC countries over the past two decades. This project explores how fiscal policy and trade patterns relate to economic output in Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka from 2000 to 2024. Using data from the World Bank’s WDI API, I cleaned and analyzed three key indicators: GDP, fiscal balance, and trade as % of GDP. The main plot reveals a strong positive association between trade openness and GDP levels, particularly in more integrated economies like India and Bangladesh."
+    "text": "Summary\nFiscal balance, trade openness, and GDP vary significantly across SAARC countries over the past two decades. This project explores how fiscal policy and trade patterns relate to economic output in Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka from 2000 to 2024. Using data from the World Bank’s WDI API, I cleaned and analyzed three key indicators: GDP, fiscal balance, and trade as % of GDP. The main plot reveals a strong positive association between trade openness and GDP levels, particularly in more integrated economies like India and Bangladesh."
   }
 ]
