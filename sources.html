@@ -112,8 +112,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#selected-indicators" id="toc-selected-indicators" class="nav-link active" data-scroll-target="#selected-indicators">📊 Selected Indicators</a></li>
+  <li><a href="#geographic-scope" id="toc-geographic-scope" class="nav-link" data-scroll-target="#geographic-scope">🌏 Geographic Scope</a></li>
+  <li><a href="#data-cleaning-and-preparation" id="toc-data-cleaning-and-preparation" class="nav-link" data-scroll-target="#data-cleaning-and-preparation">🧹 Data Cleaning and Preparation</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -137,11 +145,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The data for this project comes from the World Bank’s World Development Indicators (WDI), accessed using the <code>WDI</code> R package. I selected three variables: GDP in current US dollars (<code>NY.GDP.MKTP.CD</code>), fiscal balance as a % of GDP (<code>GC.BAL.CASH.GD.ZS</code>), and trade as % of GDP (<code>NE.TRD.GNFS.ZS</code>).</p>
-<p>Data was retrieved for SAARC member countries: Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka, for the years 2000 to 2024.</p>
-<p>Cleaning steps included renaming variables, filtering missing values, and excluding observations where any of the three main indicators were <code>NA</code>.</p>
+<p>The data used in this project was sourced from the <strong>World Bank’s World Development Indicators (WDI)</strong> database, accessed through the <a href="https://cran.r-project.org/package=WDI"><code>WDI</code></a> package in R.</p>
+<section id="selected-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="selected-indicators">📊 Selected Indicators</h3>
+<p>Three key economic indicators were retrieved for analysis:</p>
+<ul>
+<li><strong>GDP (current US$)</strong> – <code>NY.GDP.MKTP.CD</code><br>
+</li>
+<li><strong>Fiscal Balance (% of GDP)</strong> – <code>GC.BAL.CASH.GD.ZS</code><br>
+</li>
+<li><strong>Trade (% of GDP)</strong> – <code>NE.TRD.GNFS.ZS</code></li>
+</ul>
+<p>These indicators provide a foundational view of macroeconomic trends relevant to fiscal policy and trade openness.</p>
+</section>
+<section id="geographic-scope" class="level3">
+<h3 class="anchored" data-anchor-id="geographic-scope">🌏 Geographic Scope</h3>
+<p>The dataset focuses on <strong>SAARC member countries</strong>, specifically:</p>
+<ul>
+<li>Afghanistan (<code>AFG</code>)<br>
+</li>
+<li>Bangladesh (<code>BGD</code>)<br>
+</li>
+<li>Bhutan (<code>BTN</code>)<br>
+</li>
+<li>India (<code>IND</code>)<br>
+</li>
+<li>Maldives (<code>MDV</code>)<br>
+</li>
+<li>Nepal (<code>NPL</code>)<br>
+</li>
+<li>Pakistan (<code>PAK</code>)<br>
+</li>
+<li>Sri Lanka (<code>LKA</code>)</li>
+</ul>
+<p>Data was collected for the period <strong>2000 to 2024</strong>, covering nearly 25 years of regional economic activity.</p>
+</section>
+<section id="data-cleaning-and-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-cleaning-and-preparation">🧹 Data Cleaning and Preparation</h3>
+<p>The following data preparation steps were performed:</p>
+<ul>
+<li>Renamed variables for clarity (<code>gdp</code>, <code>fiscal</code>, <code>trade</code>)</li>
+<li>Filtered out rows with missing (<code>NA</code>) values in any of the three key indicators</li>
+<li>Created a derived variable for GDP in billions (<code>gdp_billion</code>) to improve readability in plots</li>
+</ul>
+<p>All processing was conducted in R using tidyverse conventions to ensure reproducibility and transparency.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
