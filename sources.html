@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sources – FISCAL-TRADE-GDP</title>
+<title>Data Sources and Cleaning – Economic Growth Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,8 +68,36 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">FISCAL-TRADE-GDP</span>
+    <span class="navbar-title">Economic Growth Analysis</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,14 +120,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./sources.html" aria-current="page"> 
-<span class="menu-text">Sources</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -117,9 +137,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#selected-indicators" id="toc-selected-indicators" class="nav-link active" data-scroll-target="#selected-indicators">📊 Selected Indicators</a></li>
-  <li><a href="#geographic-scope" id="toc-geographic-scope" class="nav-link" data-scroll-target="#geographic-scope">🌏 Geographic Scope</a></li>
-  <li><a href="#data-cleaning-and-preparation" id="toc-data-cleaning-and-preparation" class="nav-link" data-scroll-target="#data-cleaning-and-preparation">🧹 Data Cleaning and Preparation</a></li>
+  <li><a href="#preceptor-table" id="toc-preceptor-table" class="nav-link active" data-scroll-target="#preceptor-table">Preceptor Table</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  <li><a href="#cleaning-process" id="toc-cleaning-process" class="nav-link" data-scroll-target="#cleaning-process">Cleaning Process</a></li>
   </ul>
 </nav>
     </div>
@@ -128,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sources</h1>
+<h1 class="title">Data Sources and Cleaning</h1>
 </div>
 
 
@@ -145,50 +165,81 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The data used in this project was sourced from the <strong>World Bank’s World Development Indicators (WDI)</strong> database, accessed through the <a href="https://cran.r-project.org/package=WDI"><code>WDI</code></a> package in R.</p>
-<section id="selected-indicators" class="level3">
-<h3 class="anchored" data-anchor-id="selected-indicators">📊 Selected Indicators</h3>
-<p>Three key economic indicators were retrieved for analysis:</p>
-<ul>
-<li><strong>GDP (current US$)</strong> – <code>NY.GDP.MKTP.CD</code><br>
-</li>
-<li><strong>Fiscal Balance (% of GDP)</strong> – <code>GC.BAL.CASH.GD.ZS</code><br>
-</li>
-<li><strong>Trade (% of GDP)</strong> – <code>NE.TRD.GNFS.ZS</code></li>
-</ul>
-<p>These indicators provide a foundational view of macroeconomic trends relevant to fiscal policy and trade openness.</p>
+<section id="preceptor-table" class="level2">
+<h2 class="anchored" data-anchor-id="preceptor-table">Preceptor Table</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Population</td>
+<td>All economies in the WDI database (2000–2024), ~217 economies, excluding aggregates.</td>
+</tr>
+<tr class="even">
+<td>Causal Question</td>
+<td>How do trade openness, fiscal balance, health expenditure, education, infrastructure, and private sector credit influence GDP and GNI per capita?</td>
+</tr>
+<tr class="odd">
+<td>Treatment</td>
+<td>Trade openness (<code>NE.TRD.GNFS.ZS</code>), fiscal balance (<code>GC.REV.XGRT.GD.ZS</code>).</td>
+</tr>
+<tr class="even">
+<td>Covariates</td>
+<td>Health expenditure (<code>SH.XPD.TOTL.ZS</code>), primary enrollment (<code>SE.PRM.ENRR</code>), electric power consumption (<code>EG.USE.ELEC.KH.PC</code>), domestic credit (<code>FS.AST.PRVT.GD.ZS</code>), year, region, income level.</td>
+</tr>
+<tr class="odd">
+<td>Outcome</td>
+<td>Primary: Log GDP (<code>NY.GDP.MKTP.CD</code>). Alternative: Log GNI per capita (<code>NY.GNP.PCAP.CD</code>).</td>
+</tr>
+<tr class="even">
+<td>Data Source</td>
+<td>WDI via <code>WDI</code> R package: <code>NY.GDP.MKTP.CD</code>, <code>NY.GNP.PCAP.CD</code>, <code>NE.TRD.GNFS.ZS</code>, <code>GC.REV.XGRT.GD.ZS</code>, <code>SH.XPD.TOTL.ZS</code>, <code>SE.PRM.ENRR</code>, <code>EG.USE.ELEC.KH.PC</code>, <code>FS.AST.PRVT.GD.ZS</code>.</td>
+</tr>
+<tr class="odd">
+<td>Time Frame</td>
+<td>2000–2024, annual data.</td>
+</tr>
+<tr class="even">
+<td>Units</td>
+<td>Country-year observations.</td>
+</tr>
+<tr class="odd">
+<td>Potential Outcomes</td>
+<td>Expected log GDP and log GNI per capita under varying treatments and covariates.</td>
+</tr>
+<tr class="even">
+<td>Missing Data</td>
+<td>Excluded observations with missing values for key variables. No imputation.</td>
+</tr>
+<tr class="odd">
+<td>Analysis Plan</td>
+<td>Visualizations, multiple linear regression, regional comparisons.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="geographic-scope" class="level3">
-<h3 class="anchored" data-anchor-id="geographic-scope">🌏 Geographic Scope</h3>
-<p>The dataset focuses on <strong>SAARC member countries</strong>, specifically:</p>
-<ul>
-<li>Afghanistan (<code>AFG</code>)<br>
-</li>
-<li>Bangladesh (<code>BGD</code>)<br>
-</li>
-<li>Bhutan (<code>BTN</code>)<br>
-</li>
-<li>India (<code>IND</code>)<br>
-</li>
-<li>Maldives (<code>MDV</code>)<br>
-</li>
-<li>Nepal (<code>NPL</code>)<br>
-</li>
-<li>Pakistan (<code>PAK</code>)<br>
-</li>
-<li>Sri Lanka (<code>LKA</code>)</li>
-</ul>
-<p>Data was collected for the period <strong>2000 to 2024</strong>, covering nearly 25 years of regional economic activity.</p>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+<p>Data was sourced from the World Bank’s WDI using the <code>WDI</code> R package, covering over 200 economies (2000–2024). Indicators: - <strong>GDP (NY.GDP.MKTP.CD)</strong>: Nominal GDP in current US<span class="math inline">\(.
+- **GNI per Capita (NY.GNP.PCAP.CD)**: GNI per capita in current US\)</span>. - <strong>Trade Openness (NE.TRD.GNFS.ZS)</strong>: Trade as % of GDP. - <strong>Fiscal Balance (GC.REV.XGRT.GD.ZS)</strong>: Government revenue as % of GDP. - <strong>Health Expenditure (SH.XPD.TOTL.ZS)</strong>: Total health expenditure as % of GDP. - <strong>Primary Enrollment (SE.PRM.ENRR)</strong>: Gross enrollment ratio (%). - <strong>Electric Power Consumption (EG.USE.ELEC.KH.PC)</strong>: Power consumption per capita (kWh). - <strong>Domestic Credit (FS.AST.PRVT.GD.ZS)</strong>: Credit to private sector as % of GDP.</p>
 </section>
-<section id="data-cleaning-and-preparation" class="level3">
-<h3 class="anchored" data-anchor-id="data-cleaning-and-preparation">🧹 Data Cleaning and Preparation</h3>
-<p>The following data preparation steps were performed:</p>
+<section id="cleaning-process" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-process">Cleaning Process</h2>
 <ul>
-<li>Renamed variables for clarity (<code>gdp</code>, <code>fiscal</code>, <code>trade</code>)</li>
-<li>Filtered out rows with missing (<code>NA</code>) values in any of the three key indicators</li>
-<li>Created a derived variable for GDP in billions (<code>gdp_billion</code>) to improve readability in plots</li>
+<li>Retrieved data for all economies without country-specific filters.</li>
+<li>Excluded regional aggregates (<code>income != "Aggregates"</code>).</li>
+<li>Removed rows with missing values for key variables to ensure data integrity.</li>
+<li>Applied log transformation (<code>log(gdp + 1)</code>, <code>log(gni_per_capita + 1)</code>) to handle scale differences.</li>
+<li>No imputation was performed to maintain accuracy.</li>
 </ul>
-<p>All processing was conducted in R using tidyverse conventions to ensure reproducibility and transparency.</p>
 
 
 </section>

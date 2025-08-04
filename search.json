@@ -2,9 +2,51 @@
   {
     "objectID": "sources.html",
     "href": "sources.html",
-    "title": "Sources",
+    "title": "Data Sources and Cleaning",
     "section": "",
-    "text": "The data used in this project was sourced from the World Bank’s World Development Indicators (WDI) database, accessed through the WDI package in R.\n\n📊 Selected Indicators\nThree key economic indicators were retrieved for analysis:\n\nGDP (current US$) – NY.GDP.MKTP.CD\n\nFiscal Balance (% of GDP) – GC.BAL.CASH.GD.ZS\n\nTrade (% of GDP) – NE.TRD.GNFS.ZS\n\nThese indicators provide a foundational view of macroeconomic trends relevant to fiscal policy and trade openness.\n\n\n🌏 Geographic Scope\nThe dataset focuses on SAARC member countries, specifically:\n\nAfghanistan (AFG)\n\nBangladesh (BGD)\n\nBhutan (BTN)\n\nIndia (IND)\n\nMaldives (MDV)\n\nNepal (NPL)\n\nPakistan (PAK)\n\nSri Lanka (LKA)\n\nData was collected for the period 2000 to 2024, covering nearly 25 years of regional economic activity.\n\n\n🧹 Data Cleaning and Preparation\nThe following data preparation steps were performed:\n\nRenamed variables for clarity (gdp, fiscal, trade)\nFiltered out rows with missing (NA) values in any of the three key indicators\nCreated a derived variable for GDP in billions (gdp_billion) to improve readability in plots\n\nAll processing was conducted in R using tidyverse conventions to ensure reproducibility and transparency."
+    "text": "Component\nDetails\n\n\n\n\nPopulation\nAll economies in the WDI database (2000–2024), ~217 economies, excluding aggregates.\n\n\nCausal Question\nHow do trade openness, fiscal balance, health expenditure, education, infrastructure, and private sector credit influence GDP and GNI per capita?\n\n\nTreatment\nTrade openness (NE.TRD.GNFS.ZS), fiscal balance (GC.REV.XGRT.GD.ZS).\n\n\nCovariates\nHealth expenditure (SH.XPD.TOTL.ZS), primary enrollment (SE.PRM.ENRR), electric power consumption (EG.USE.ELEC.KH.PC), domestic credit (FS.AST.PRVT.GD.ZS), year, region, income level.\n\n\nOutcome\nPrimary: Log GDP (NY.GDP.MKTP.CD). Alternative: Log GNI per capita (NY.GNP.PCAP.CD).\n\n\nData Source\nWDI via WDI R package: NY.GDP.MKTP.CD, NY.GNP.PCAP.CD, NE.TRD.GNFS.ZS, GC.REV.XGRT.GD.ZS, SH.XPD.TOTL.ZS, SE.PRM.ENRR, EG.USE.ELEC.KH.PC, FS.AST.PRVT.GD.ZS.\n\n\nTime Frame\n2000–2024, annual data.\n\n\nUnits\nCountry-year observations.\n\n\nPotential Outcomes\nExpected log GDP and log GNI per capita under varying treatments and covariates.\n\n\nMissing Data\nExcluded observations with missing values for key variables. No imputation.\n\n\nAnalysis Plan\nVisualizations, multiple linear regression, regional comparisons."
+  },
+  {
+    "objectID": "sources.html#preceptor-table",
+    "href": "sources.html#preceptor-table",
+    "title": "Data Sources and Cleaning",
+    "section": "",
+    "text": "Component\nDetails\n\n\n\n\nPopulation\nAll economies in the WDI database (2000–2024), ~217 economies, excluding aggregates.\n\n\nCausal Question\nHow do trade openness, fiscal balance, health expenditure, education, infrastructure, and private sector credit influence GDP and GNI per capita?\n\n\nTreatment\nTrade openness (NE.TRD.GNFS.ZS), fiscal balance (GC.REV.XGRT.GD.ZS).\n\n\nCovariates\nHealth expenditure (SH.XPD.TOTL.ZS), primary enrollment (SE.PRM.ENRR), electric power consumption (EG.USE.ELEC.KH.PC), domestic credit (FS.AST.PRVT.GD.ZS), year, region, income level.\n\n\nOutcome\nPrimary: Log GDP (NY.GDP.MKTP.CD). Alternative: Log GNI per capita (NY.GNP.PCAP.CD).\n\n\nData Source\nWDI via WDI R package: NY.GDP.MKTP.CD, NY.GNP.PCAP.CD, NE.TRD.GNFS.ZS, GC.REV.XGRT.GD.ZS, SH.XPD.TOTL.ZS, SE.PRM.ENRR, EG.USE.ELEC.KH.PC, FS.AST.PRVT.GD.ZS.\n\n\nTime Frame\n2000–2024, annual data.\n\n\nUnits\nCountry-year observations.\n\n\nPotential Outcomes\nExpected log GDP and log GNI per capita under varying treatments and covariates.\n\n\nMissing Data\nExcluded observations with missing values for key variables. No imputation.\n\n\nAnalysis Plan\nVisualizations, multiple linear regression, regional comparisons."
+  },
+  {
+    "objectID": "sources.html#data-sources",
+    "href": "sources.html#data-sources",
+    "title": "Data Sources and Cleaning",
+    "section": "Data Sources",
+    "text": "Data Sources\nData was sourced from the World Bank’s WDI using the WDI R package, covering over 200 economies (2000–2024). Indicators: - GDP (NY.GDP.MKTP.CD): Nominal GDP in current US\\(.\n- **GNI per Capita (NY.GNP.PCAP.CD)**: GNI per capita in current US\\). - Trade Openness (NE.TRD.GNFS.ZS): Trade as % of GDP. - Fiscal Balance (GC.REV.XGRT.GD.ZS): Government revenue as % of GDP. - Health Expenditure (SH.XPD.TOTL.ZS): Total health expenditure as % of GDP. - Primary Enrollment (SE.PRM.ENRR): Gross enrollment ratio (%). - Electric Power Consumption (EG.USE.ELEC.KH.PC): Power consumption per capita (kWh). - Domestic Credit (FS.AST.PRVT.GD.ZS): Credit to private sector as % of GDP."
+  },
+  {
+    "objectID": "sources.html#cleaning-process",
+    "href": "sources.html#cleaning-process",
+    "title": "Data Sources and Cleaning",
+    "section": "Cleaning Process",
+    "text": "Cleaning Process\n\nRetrieved data for all economies without country-specific filters.\nExcluded regional aggregates (income != \"Aggregates\").\nRemoved rows with missing values for key variables to ensure data integrity.\nApplied log transformation (log(gdp + 1), log(gni_per_capita + 1)) to handle scale differences.\nNo imputation was performed to maintain accuracy."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Global Economic Growth Analysis (2000–2023)",
+    "section": "",
+    "text": "This project investigates the drivers of economic growth across countries from 2000 to 2023, using data from the World Development Indicators (WDI). By modeling GDP growth as a function of income levels, trade openness, investment, inflation, and unemployment, we address Sustainable Development Goal 8 (Decent Work and Economic Growth). Employing both cross-sectional (2023) and panel data (2000–2023) regression models, this analysis quantifies key relationships and presents results through clear tables and visualizations. The project adheres to data science principles: wisdom in purposeful analysis, justice in transparent data use, courage in addressing limitations, and temperance in maintaining simplicity."
+  },
+  {
+    "objectID": "index.html#cross-sectional-analysis-2023",
+    "href": "index.html#cross-sectional-analysis-2023",
+    "title": "Global Economic Growth Analysis (2000–2023)",
+    "section": "Cross-Sectional Analysis (2023)",
+    "text": "Cross-Sectional Analysis (2023)\n\nData Preparation and Regression\n\n\n\nRegression Results for GDP Growth (2023)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\nIntercept\n2.828\n2.721\n1.039\n0.300\n\n\nGNI per capita (US$)\n0.000\n0.000\n-0.514\n0.608\n\n\nExports (% of GDP)\n0.018\n0.020\n0.914\n0.362\n\n\nCapital formation (% of GDP)\n0.023\n0.085\n0.275\n0.783\n\n\nConsumer price index\n0.000\n0.001\n-0.300\n0.765\n\n\nUnemployment (% of labor force)\n-0.058\n0.119\n-0.490\n0.625\n\n\n\n\n\n\n\nVisualization\n\n\n\n\n\nCoefficient Estimates for 2023 Cross-Sectional Model"
+  },
+  {
+    "objectID": "index.html#panel-data-analysis-20002023",
+    "href": "index.html#panel-data-analysis-20002023",
+    "title": "Global Economic Growth Analysis (2000–2023)",
+    "section": "Panel Data Analysis (2000–2023)",
+    "text": "Panel Data Analysis (2000–2023)\n\n\n\nFixed Effects Regression Results for GDP Growth (2000–2023)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\nGNI per capita (US$)\n0.000\n0.000\n-0.346\n0.730\n\n\nExports (% of GDP)\n0.089\n0.009\n9.590\n0.000\n\n\nCapital formation (% of GDP)\n0.141\n0.015\n9.121\n0.000\n\n\nConsumer price index\n0.000\n0.000\n-0.465\n0.642\n\n\nUnemployment (% of labor force)\n-0.088\n0.037\n-2.356\n0.019"
   },
   {
     "objectID": "about.html",
@@ -12,12 +54,5 @@
     "title": "About",
     "section": "",
     "text": "I’m Faran Abbas, a graduate student specializing in World Economy. My academic interests include international trade, fiscal policy, and economic development in emerging markets. You can explore my work and projects on GitHub, or reach me via email at faranabbas@hotmail.com.\nThis project analyzes how fiscal policy and international trade have influenced GDP growth across SAARC countries from 2000 to 2024. It combines data visualization, policy analysis, and economic indicators using data sourced from the World Bank. The full project repository is available here.\nThis project was developed as part of Kane’s Data Science Bootcamp, which emphasizes reproducible research and open-source tools using R and Quarto."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fiscal Balance, Trade Openness, and GDP in SAARC Countries (2000–2024)",
-    "section": "",
-    "text": "Summary This project investigates the trends in fiscal balance, trade openness, and GDP among SAARC countries from 2000 to 2024 using World Bank WDI data. The analysis focuses on Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka.\nKey Insights:\n\nTrade openness has expanded in several countries—most notably India and Bangladesh—indicating stronger economic integration.\nFiscal revenue patterns differ, reflecting varying government capacities and policies.\nGDP growth is uneven, with countries like India showing sustained growth, while others such as Afghanistan and Nepal exhibit volatility.\n\nThese observations serve as a foundation for deeper policy discussion, especially around how fiscal strategies and international trade engagement affect economic performance in developing regions."
   }
 ]
