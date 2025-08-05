@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/sources.html</loc>
-    <lastmod>2025-08-04T13:44:48.377Z</lastmod>
-  </url>
-  <url>
-    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/index.html</loc>
-    <lastmod>2025-08-04T16:36:05.909Z</lastmod>
-  </url>
-  <url>
-    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/about.html</loc>
-    <lastmod>2025-07-10T16:13:36.856Z</lastmod>
+    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/Trends.html</loc>
+    <lastmod>2025-08-05T04:54:14.917Z</lastmod>
   </url>
   <url>
     <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/rough.html</loc>
     <lastmod>2025-08-04T16:03:59.008Z</lastmod>
+  </url>
+  <url>
+    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/index.html</loc>
+    <lastmod>2025-08-05T04:46:43.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/about.html</loc>
+    <lastmod>2025-08-05T00:32:28.471Z</lastmod>
+  </url>
+  <url>
+    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/model.html</loc>
+    <lastmod>2025-08-05T04:51:17.342Z</lastmod>
+  </url>
+  <url>
+    <loc>https://faranabbas-repo.github.io/fiscal-trade-gdp/sources.html</loc>
+    <lastmod>2025-08-05T04:53:12.044Z</lastmod>
   </url>
 </urlset>

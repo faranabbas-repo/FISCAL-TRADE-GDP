@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Faran Abbas">
+<meta name="dcterms.date" content="2025-08-05">
 
-<title>About – Global Economic Growth Analysis</title>
+<title>Model – Global Economic Growth Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3829,7 +3831,7 @@ vertical-align: -.125em;
 <span class="menu-text">Trends</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./model.html"> 
+    <a class="nav-link active" href="./model.html" aria-current="page"> 
 <span class="menu-text">Model</span></a>
   </li>  
   <li class="nav-item">
@@ -3837,7 +3839,7 @@ vertical-align: -.125em;
 <span class="menu-text">Sources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -3859,14 +3861,26 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Model</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Faran Abbas </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 5, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -3876,9 +3890,70 @@ vertical-align: -.125em;
 </header>
 
 
-<p>I’m <strong>Faran Abbas</strong>, a graduate student specializing in <em>World Economy</em>. My academic interests include international trade, fiscal policy, and economic development in emerging markets. You can explore my work and projects on <a href="https://github.com/faranabbas-repo">GitHub</a>, or reach me via email at <a href="mailto:faranabbas@hotmail.com">faranabbas@hotmail.com</a>.</p>
-<p>This project analyzes how <strong>fiscal policy</strong> and <strong>international trade</strong> have influenced <strong>GDP growth</strong> across <strong>countries</strong> from 2000 to 2023. It combines data visualization, policy analysis, and economic indicators using data sourced from the World Bank. The full project repository is available <a href="https://github.com/faranabbas-repo/fiscal-trade-gdp.git">here</a>.</p>
-<p>This project was developed as part of <a href="https://bootcamp.davidkane.info/">Kane’s Data Science Bootcamp</a>, which emphasizes reproducible research and open-source tools using R and Quarto.</p>
+<p>Model Details This project employs a fixed-effects panel model to analyze the drivers of GDP growth across countries from 2000 to 2023. The model is specified as follows: [ = _0 + _1 + _2 + _3 + _4 + _5 + _i + <em>t + </em>{it}] where:</p>
+<p>(<em>{it}) is the annual percentage change in GDP for country (i) in year (t), (</em>{it}) is the GNI per capita in current US dollars, (<em>{it}) is exports as a percentage of GDP, (</em>{it}) is gross capital formation as a percentage of GDP, (<em>{it}) is the consumer price index, (</em>{it}) is the percentage of the labor force unemployed, (_i) represents country-specific fixed effects, (<em>t) represents year-specific fixed effects, (</em>{it}) is the error term.</p>
+<p>Parameter Estimates The table below presents the coefficient estimates from the fixed-effects model:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Fixed Effects Model Coefficients (2000–2023)</caption>
+<colgroup>
+<col style="width: 46%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Income per capita (US$)</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-0.346</td>
+<td style="text-align: right;">0.730</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Trade openness (% of GDP)</td>
+<td style="text-align: right;">0.089</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">9.590</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Investment (% of GDP)</td>
+<td style="text-align: right;">0.141</td>
+<td style="text-align: right;">0.015</td>
+<td style="text-align: right;">9.121</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inflation</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-0.465</td>
+<td style="text-align: right;">0.642</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unemployment (% of labor force)</td>
+<td style="text-align: right;">-0.088</td>
+<td style="text-align: right;">0.037</td>
+<td style="text-align: right;">-2.356</td>
+<td style="text-align: right;">0.019</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The model results suggest that investment has a significant positive impact on GDP growth, while the effects of other covariates vary in magnitude and significance.</p>
 
 
 
