@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Faran Abbas">
-<meta name="dcterms.date" content="2025-08-04">
 
-<title>Global Economic Growth Analysis (2000–2023) – Fiscal Trade and GDP Analysis</title>
+<title>Fiscal Balance, Trade Openness, and GDP in SAARC Countries (2000–2024) – fiscal-trade-gdp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,6 +69,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -81,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Fiscal Trade and GDP Analysis</span>
+    <span class="navbar-title">fiscal-trade-gdp</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -98,14 +97,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./sources.html"> 
-<span class="menu-text">Sources</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./model.html"> 
-<span class="menu-text">Model</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -117,49 +108,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#project-summary" id="toc-project-summary" class="nav-link active" data-scroll-target="#project-summary">Project Summary</a></li>
-  <li><a href="#data-and-methods" id="toc-data-and-methods" class="nav-link" data-scroll-target="#data-and-methods">Data and Methods</a>
-  <ul class="collapse">
-  <li><a href="#cross-sectional-analysis-2023" id="toc-cross-sectional-analysis-2023" class="nav-link" data-scroll-target="#cross-sectional-analysis-2023">Cross-Sectional Analysis (2023)</a>
-  <ul class="collapse">
-  <li><a href="#data-preparation-and-regression" id="toc-data-preparation-and-regression" class="nav-link" data-scroll-target="#data-preparation-and-regression">Data Preparation and Regression</a></li>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
-  </ul></li>
-  <li><a href="#panel-data-analysis-20002023" id="toc-panel-data-analysis-20002023" class="nav-link" data-scroll-target="#panel-data-analysis-20002023">Panel Data Analysis (2000–2023)</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Global Economic Growth Analysis (2000–2023)</h1>
+<h1 class="title">Fiscal Balance, Trade Openness, and GDP in SAARC Countries (2000–2024)</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Faran Abbas </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 4, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -171,186 +135,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Impact of Key Factors on GDP Growth (2000–2023)</figcaption>
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="project-summary" class="level1">
-<h1>Project Summary</h1>
-<p>What drives economic growth across countries from 2000 to 2023? This project uses data from the World Bank’s World Development Indicators, covering 2000 to 2023, to explore this question. The dataset, accessed via the WDI R package, was cleaned by removing missing values and standardizing variables like GDP growth (annual percentage change), income per capita (current US dollars), and trade openness (exports as a percentage of GDP). A fixed-effects panel model was employed to analyze GDP growth as the outcome variable, with covariates including income per capita, trade openness, investment, inflation, and unemployment. The model accounts for country and time-specific effects to ensure robust estimates. Higher investment levels, measured as gross capital formation, are strongly associated with increased GDP growth, underscoring their critical role in economic development.</p>
-</section>
-<section id="data-and-methods" class="level1">
-<h1>Data and Methods</h1>
-<p>The analysis leverages WDI data, focusing on:</p>
-<ul>
-<li><strong>Outcome</strong>: GDP growth (annual %, <code>NY.GDP.MKTP.KD.ZG</code>)</li>
-<li><strong>Covariates</strong>:
-<ul>
-<li>GNI per capita (current US$, <code>NY.GNP.PCAP.CD</code>)</li>
-<li>Exports of goods and services (% of GDP, <code>NE.EXP.GNFS.ZS</code>)</li>
-<li>Gross capital formation (% of GDP, <code>NE.GDI.TOTL.ZS</code>)</li>
-<li>Consumer price index (2010 = 100, <code>FP.CPI.TOTL</code>)</li>
-<li>Unemployment (% of total labor force, <code>SL.UEM.TOTL.ZS</code>)</li>
-</ul></li>
-</ul>
-<p>Data is sourced via the <code>WDI</code> R package, with missing values removed for robustness. Two models are estimated: 1. A multiple linear regression for 2023 data. 2. A fixed-effects panel model for 2000–2023, accounting for country and time heterogeneity.</p>
-<p>Results are visualized with regression tables and bar charts for accessibility.</p>
-<section id="cross-sectional-analysis-2023" class="level2">
-<h2 class="anchored" data-anchor-id="cross-sectional-analysis-2023">Cross-Sectional Analysis (2023)</h2>
-<section id="data-preparation-and-regression" class="level3">
-<h3 class="anchored" data-anchor-id="data-preparation-and-regression">Data Preparation and Regression</h3>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Regression Results for GDP Growth (2023)</caption>
-<colgroup>
-<col style="width: 46%">
-<col style="width: 13%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Intercept</td>
-<td style="text-align: right;">2.828</td>
-<td style="text-align: right;">2.721</td>
-<td style="text-align: right;">1.039</td>
-<td style="text-align: right;">0.300</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">GNI per capita (US$)</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-0.514</td>
-<td style="text-align: right;">0.608</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Exports (% of GDP)</td>
-<td style="text-align: right;">0.018</td>
-<td style="text-align: right;">0.020</td>
-<td style="text-align: right;">0.914</td>
-<td style="text-align: right;">0.362</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Capital formation (% of GDP)</td>
-<td style="text-align: right;">0.023</td>
-<td style="text-align: right;">0.085</td>
-<td style="text-align: right;">0.275</td>
-<td style="text-align: right;">0.783</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Consumer price index</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">-0.300</td>
-<td style="text-align: right;">0.765</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Unemployment (% of labor force)</td>
-<td style="text-align: right;">-0.058</td>
-<td style="text-align: right;">0.119</td>
-<td style="text-align: right;">-0.490</td>
-<td style="text-align: right;">0.625</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="visualization" class="level3">
-<h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/plot-coefficients-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Coefficient Estimates for 2023 Cross-Sectional Model</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="panel-data-analysis-20002023" class="level2">
-<h2 class="anchored" data-anchor-id="panel-data-analysis-20002023">Panel Data Analysis (2000–2023)</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Fixed Effects Regression Results for GDP Growth (2000–2023)</caption>
-<colgroup>
-<col style="width: 46%">
-<col style="width: 13%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">GNI per capita (US$)</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-0.346</td>
-<td style="text-align: right;">0.730</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Exports (% of GDP)</td>
-<td style="text-align: right;">0.089</td>
-<td style="text-align: right;">0.009</td>
-<td style="text-align: right;">9.590</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Capital formation (% of GDP)</td>
-<td style="text-align: right;">0.141</td>
-<td style="text-align: right;">0.015</td>
-<td style="text-align: right;">9.121</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Consumer price index</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-0.465</td>
-<td style="text-align: right;">0.642</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Unemployment (% of labor force)</td>
-<td style="text-align: right;">-0.088</td>
-<td style="text-align: right;">0.037</td>
-<td style="text-align: right;">-2.356</td>
-<td style="text-align: right;">0.019</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p><strong>Summary</strong> Fiscal balance, trade openness, and GDP vary significantly across SAARC countries over the past two decades. This project explores how fiscal policy and trade patterns relate to economic output in Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka from 2000 to 2024. Using data from the World Bank’s WDI API, I cleaned and analyzed three key indicators: GDP, fiscal balance, and trade as % of GDP. The main plot reveals a strong positive association between trade openness and GDP levels, particularly in more integrated economies like India and Bangladesh.</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
