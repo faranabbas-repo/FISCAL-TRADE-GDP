@@ -7,6 +7,20 @@
     "text": "Regional GDP Growth Trends (2000–2023)\nThis page explores GDP growth trends in three key regions—East Asia & Pacific, Sub-Saharan Africa, and Latin America & Caribbean—from 2000 to 2023, using data from the World Bank’s World Development Indicators. By focusing on these regions, we uncover distinct patterns of economic performance, from rapid growth to periods of volatility, shaped by global events like the 2008 financial crisis. The visualizations below highlight both average growth trends and the variability within each region, offering insights into their economic stability.\nAverage GDP Growth Over Time\nThe line plot below shows the average annual GDP growth for each region, revealing how growth trajectories differ across East Asia & Pacific, Sub-Saharan Africa, and Latin America & Caribbean.\n\n\n\n\n\n\n\n\n\nEast Asia & Pacific consistently shows higher and more stable growth, while Sub-Saharan Africa and Latin America & Caribbean exhibit greater fluctuations, particularly around 2008–2009.\nVariability in GDP Growth\nThe box plot below illustrates the distribution of GDP growth within each region, highlighting differences in economic stability across countries.\n\n\n\n\n\n\n\n\n\nThe box plot reveals that Sub-Saharan Africa has the widest range of GDP growth, indicating significant variability across countries, while East Asia & Pacific shows a tighter distribution, suggesting greater economic consistency. These patterns align with the model results, which highlight the role of investment and trade in driving stable growth."
   },
   {
+    "objectID": "model.html",
+    "href": "model.html",
+    "title": "Model",
+    "section": "",
+    "text": "Model Details This project employs a fixed-effects panel model to analyze the drivers of GDP growth across countries from 2000 to 2023. The model is specified as follows: [ = _0 + _1 + _2 + _3 + _4 + _5 + _i + t + {it}] where:\n({it}) is the annual percentage change in GDP for country (i) in year (t), ({it}) is the GNI per capita in current US dollars, ({it}) is exports as a percentage of GDP, ({it}) is gross capital formation as a percentage of GDP, ({it}) is the consumer price index, ({it}) is the percentage of the labor force unemployed, (_i) represents country-specific fixed effects, (t) represents year-specific fixed effects, ({it}) is the error term.\nParameter Estimates The table below presents the coefficient estimates from the fixed-effects model:\n\n\n\nFixed Effects Model Coefficients (2000–2023)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\nIncome per capita (US$)\n0.000\n0.000\n-0.346\n0.730\n\n\nTrade openness (% of GDP)\n0.089\n0.009\n9.590\n0.000\n\n\nInvestment (% of GDP)\n0.141\n0.015\n9.121\n0.000\n\n\nInflation\n0.000\n0.000\n-0.465\n0.642\n\n\nUnemployment (% of labor force)\n-0.088\n0.037\n-2.356\n0.019\n\n\n\n\n\nThe model results suggest that investment has a significant positive impact on GDP growth, while the effects of other covariates vary in magnitude and significance."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m Faran Abbas, a graduate student specializing in World Economy. My academic interests include international trade, fiscal policy, and economic development in emerging markets. You can explore my work and projects on GitHub, or reach me via email at faranabbas@hotmail.com.\nThis project was developed as part of Kane’s Data Science Bootcamp, which emphasizes reproducible research and open-source tools using R and Quarto."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Global Economic Growth Analysis (2000–2023)",
@@ -26,47 +40,5 @@
     "title": "Global Economic Growth Analysis (2000–2023)",
     "section": "Panel Data Analysis (2000–2023)",
     "text": "Panel Data Analysis (2000–2023)\n\n\n\nFixed Effects Regression Results for GDP Growth (2000–2023)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\nGNI per capita (US$)\n0.000\n0.000\n-0.346\n0.730\n\n\nExports (% of GDP)\n0.089\n0.009\n9.590\n0.000\n\n\nCapital formation (% of GDP)\n0.141\n0.015\n9.121\n0.000\n\n\nConsumer price index\n0.000\n0.000\n-0.465\n0.642\n\n\nUnemployment (% of labor force)\n-0.088\n0.037\n-2.356\n0.019"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "I’m Faran Abbas, a graduate student specializing in World Economy. My academic interests include international trade, fiscal policy, and economic development in emerging markets. You can explore my work and projects on GitHub, or reach me via email at faranabbas@hotmail.com.\nThis project analyzes how fiscal policy and international trade have influenced GDP growth across countries from 2000 to 2023. It combines data visualization, policy analysis, and economic indicators using data sourced from the World Bank. The full project repository is available here.\nThis project was developed as part of Kane’s Data Science Bootcamp, which emphasizes reproducible research and open-source tools using R and Quarto."
-  },
-  {
-    "objectID": "model.html",
-    "href": "model.html",
-    "title": "Model",
-    "section": "",
-    "text": "Model Details This project employs a fixed-effects panel model to analyze the drivers of GDP growth across countries from 2000 to 2023. The model is specified as follows: [ = _0 + _1 + _2 + _3 + _4 + _5 + _i + t + {it}] where:\n({it}) is the annual percentage change in GDP for country (i) in year (t), ({it}) is the GNI per capita in current US dollars, ({it}) is exports as a percentage of GDP, ({it}) is gross capital formation as a percentage of GDP, ({it}) is the consumer price index, ({it}) is the percentage of the labor force unemployed, (_i) represents country-specific fixed effects, (t) represents year-specific fixed effects, ({it}) is the error term.\nParameter Estimates The table below presents the coefficient estimates from the fixed-effects model:\n\n\n\nFixed Effects Model Coefficients (2000–2023)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\nIncome per capita (US$)\n0.000\n0.000\n-0.346\n0.730\n\n\nTrade openness (% of GDP)\n0.089\n0.009\n9.590\n0.000\n\n\nInvestment (% of GDP)\n0.141\n0.015\n9.121\n0.000\n\n\nInflation\n0.000\n0.000\n-0.465\n0.642\n\n\nUnemployment (% of labor force)\n-0.088\n0.037\n-2.356\n0.019\n\n\n\n\n\nThe model results suggest that investment has a significant positive impact on GDP growth, while the effects of other covariates vary in magnitude and significance."
-  },
-  {
-    "objectID": "sources.html",
-    "href": "sources.html",
-    "title": "Data Sources",
-    "section": "",
-    "text": "Data Sources\nThe data for this project was sourced from the World Bank’s World Development Indicators (WDI) database, accessed via the WDI R package, covering the period from 2000 to 2023. Key variables include GDP growth (annual percentage change), income per capita (current US dollars), trade openness (exports as a percentage of GDP), investment (gross capital formation as a percentage of GDP), inflation (consumer price index), and unemployment (percentage of the labor force). The raw data was cleaned by removing observations with missing values to ensure robust analysis. No specific countries or years were excluded beyond those with incomplete data, resulting in a balanced panel dataset suitable for fixed-effects modeling."
-  },
-  {
-    "objectID": "sources.html#preceptor-table",
-    "href": "sources.html#preceptor-table",
-    "title": "Data Sources",
-    "section": "Preceptor Table",
-    "text": "Preceptor Table\n\n\n\n\n\n\n\nComponent\nDetails\n\n\n\n\nPopulation\nAll economies in the WDI database (2000–2024), ~217 economies, excluding aggregates.\n\n\nCausal Question\nHow do trade openness, fiscal balance, health expenditure, education, infrastructure, and private sector credit influence GDP and GNI per capita?\n\n\nTreatment\nTrade openness (NE.TRD.GNFS.ZS), fiscal balance (GC.REV.XGRT.GD.ZS).\n\n\nCovariates\nHealth expenditure (SH.XPD.TOTL.ZS), primary enrollment (SE.PRM.ENRR), electric power consumption (EG.USE.ELEC.KH.PC), domestic credit (FS.AST.PRVT.GD.ZS), year, region, income level.\n\n\nOutcome\nPrimary: Log GDP (NY.GDP.MKTP.CD). Alternative: Log GNI per capita (NY.GNP.PCAP.CD).\n\n\nData Source\nWDI via WDI R package: NY.GDP.MKTP.CD, NY.GNP.PCAP.CD, NE.TRD.GNFS.ZS, GC.REV.XGRT.GD.ZS, SH.XPD.TOTL.ZS, SE.PRM.ENRR, EG.USE.ELEC.KH.PC, FS.AST.PRVT.GD.ZS.\n\n\nTime Frame\n2000–2024, annual data.\n\n\nUnits\nCountry-year observations.\n\n\nPotential Outcomes\nExpected log GDP and log GNI per capita under varying treatments and covariates.\n\n\nMissing Data\nExcluded observations with missing values for key variables. No imputation.\n\n\nAnalysis Plan\nVisualizations, multiple linear regression, regional comparisons."
-  },
-  {
-    "objectID": "sources.html#data-sources",
-    "href": "sources.html#data-sources",
-    "title": "Data Sources",
-    "section": "Data Sources",
-    "text": "Data Sources\nData was sourced from the World Bank’s WDI using the WDI R package, covering over 200 economies (2000–2024). Indicators: - GDP (NY.GDP.MKTP.CD): Nominal GDP in current US\\(.\n- **GNI per Capita (NY.GNP.PCAP.CD)**: GNI per capita in current US\\). - Trade Openness (NE.TRD.GNFS.ZS): Trade as % of GDP. - Fiscal Balance (GC.REV.XGRT.GD.ZS): Government revenue as % of GDP. - Health Expenditure (SH.XPD.TOTL.ZS): Total health expenditure as % of GDP. - Primary Enrollment (SE.PRM.ENRR): Gross enrollment ratio (%). - Electric Power Consumption (EG.USE.ELEC.KH.PC): Power consumption per capita (kWh). - Domestic Credit (FS.AST.PRVT.GD.ZS): Credit to private sector as % of GDP."
-  },
-  {
-    "objectID": "sources.html#cleaning-process",
-    "href": "sources.html#cleaning-process",
-    "title": "Data Sources",
-    "section": "Cleaning Process",
-    "text": "Cleaning Process\n\nRetrieved data for all economies without country-specific filters.\nExcluded regional aggregates (income != \"Aggregates\").\nRemoved rows with missing values for key variables to ensure data integrity.\nApplied log transformation (log(gdp + 1), log(gni_per_capita + 1)) to handle scale differences.\nNo imputation was performed to maintain accuracy."
   }
 ]
