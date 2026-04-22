@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Fiscal Balance, Trade Openness, and GDP in SAARC"
+  title: "Fiscal Revenue, Trade Openness, and GDP in SAARC"
   navbar:
     left:
       - href: index.qmd

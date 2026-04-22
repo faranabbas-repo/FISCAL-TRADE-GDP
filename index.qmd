@@ -1,5 +1,5 @@
 ---
-title: "Fiscal Balance, Trade Openness, and GDP in SAARC Countries (2000-2024)"
+title: "Fiscal Revenue, Trade Openness, and GDP in SAARC Countries (2000-2024)"
 format: html
 editor: visual
 execute:
@@ -19,7 +19,7 @@ data <- WDI(
   indicator = c(
     "NY.GDP.MKTP.CD",      # GDP
     "NE.TRD.GNFS.ZS",      # Trade openness
-    "GC.BAL.CASH.GD.ZS"    # Fiscal balance
+    "GC.REV.XGRT.GD.ZS"    # Revenue excluding grants
   ),
   start = 2000,
   end = 2024,
@@ -30,9 +30,9 @@ data <- data |>
   rename(
     gdp = NY.GDP.MKTP.CD,
     trade = NE.TRD.GNFS.ZS,
-    fiscal_balance = GC.BAL.CASH.GD.ZS
+    fiscal_revenue = GC.REV.XGRT.GD.ZS
   ) |>
-  filter(!is.na(gdp), !is.na(fiscal_balance), !is.na(trade))
+  filter(!is.na(gdp), !is.na(fiscal_revenue), !is.na(trade))
 
 ggplot(data, aes(x = trade, y = gdp, color = country)) +
   geom_point(alpha = 0.5) +
@@ -47,8 +47,8 @@ ggplot(data, aes(x = trade, y = gdp, color = country)) +
 
 **Summary**
 
-This project compares fiscal balance, trade openness, and GDP across SAARC economies from 2000 to 2024 using World Bank World Development Indicators.
+This project compares fiscal revenue capacity, trade openness, and GDP across SAARC economies from 2000 to 2024 using World Bank World Development Indicators.
 
 The analysis focuses on Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka. Using the WDI API in R, the project retrieves and cleans regional macroeconomic data, then visualizes how trade openness relates to GDP across countries and years.
 
-The current chart highlights a positive association between trade openness and GDP, especially for larger and more integrated economies in the region. Fiscal balance is included as a core policy variable to support broader comparisons of macroeconomic conditions across SAARC countries.
+The current chart highlights a positive association between trade openness and GDP, especially for larger and more integrated economies in the region. Revenue excluding grants is included as a core fiscal-capacity variable to support broader comparisons of macroeconomic conditions across SAARC countries.

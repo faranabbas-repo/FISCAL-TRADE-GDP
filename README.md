@@ -1,9 +1,9 @@
-# Fiscal Balance, Trade Openness, and GDP in SAARC Countries
+# Fiscal Revenue, Trade Openness, and GDP in SAARC Countries
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-blue?style=flat&logo=github)](https://faranabbas-repo.github.io/fiscal-trade-gdp)
 [![Data Source](https://img.shields.io/badge/Data-World%20Bank%20WDI-orange?style=flat)](https://datacatalog.worldbank.org/search/dataset/0037712)
 
-Regional macroeconomic analysis of how fiscal balance and trade openness relate to GDP across SAARC countries from 2000 to 2024.
+Regional macroeconomic analysis of how fiscal revenue capacity and trade openness relate to GDP across SAARC countries from 2000 to 2024.
 
 This project is designed as an economics portfolio piece: it uses real World Bank data, focuses on a clear regional policy question, and presents the results through a reproducible Quarto website.
 
@@ -13,18 +13,18 @@ This project is designed as an economics portfolio piece: it uses real World Ban
 - Countries: Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka
 - Period: 2000-2024
 - Data source: World Bank World Development Indicators
-- Variables: GDP, trade openness, and fiscal balance
+- Variables: GDP, trade openness, and revenue excluding grants
 - Tools: R, WDI, tidyverse, ggplot2, Quarto
 
 ## Research Question
 
-How do trade openness and fiscal conditions relate to economic output across SAARC countries?
+How do trade openness and fiscal revenue capacity relate to economic output across SAARC countries?
 
 The project compares cross-country patterns in:
 
 - GDP in current US dollars
 - trade as a share of GDP
-- fiscal balance as a share of GDP
+- revenue excluding grants as a share of GDP
 
 The broader motivation is to connect macroeconomic policy conditions to differences in economic scale and regional performance.
 
@@ -48,7 +48,7 @@ Indicators used:
 
 - `NY.GDP.MKTP.CD`: GDP (current US dollars)
 - `NE.TRD.GNFS.ZS`: Trade openness as a percentage of GDP
-- `GC.BAL.CASH.GD.ZS`: Fiscal balance as a percentage of GDP
+- `GC.REV.XGRT.GD.ZS`: Revenue, excluding grants (% of GDP)
 
 Coverage:
 
@@ -59,7 +59,7 @@ Coverage:
 
 The project retrieves WDI data for all SAARC member countries, cleans missing values, and visualizes the relationship between trade openness and GDP across the full period.
 
-The fiscal balance variable is included to support a broader macroeconomic comparison of how external openness and fiscal conditions relate to economic performance in the region.
+The fiscal revenue variable is included to support a broader macroeconomic comparison of how external openness and state revenue capacity relate to economic performance in the region.
 
 This project is best understood as an exploratory regional macroeconomic analysis rather than a causal identification exercise.
 
@@ -70,7 +70,7 @@ The visual evidence suggests that more externally integrated SAARC economies ten
 That makes the project useful as a starting point for deeper work on:
 
 - regional trade integration
-- fiscal sustainability
+- fiscal capacity and state revenue
 - development differences within South Asia
 
 ## Economics Skills Demonstrated
@@ -118,7 +118,7 @@ This repo strengthens an economics CV because it shows a clear regional policy t
 
 A concise CV description for this project could be:
 
-> Built a regional macroeconomic project on SAARC countries using World Bank WDI data (2000-2024), analyzing the relationship between fiscal balance, trade openness, and GDP in R and publishing the results as a Quarto website.
+> Built a regional macroeconomic project on SAARC countries using World Bank WDI data (2000-2024), analyzing the relationship between government revenue capacity, trade openness, and GDP in R and publishing the results as a Quarto website.
 
 ## Author
 

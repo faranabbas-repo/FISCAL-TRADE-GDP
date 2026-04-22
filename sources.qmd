@@ -9,7 +9,7 @@ The project uses three indicators:
 
 - GDP in current US dollars: `NY.GDP.MKTP.CD`
 - Trade openness as a percentage of GDP: `NE.TRD.GNFS.ZS`
-- Fiscal balance as a percentage of GDP: `GC.BAL.CASH.GD.ZS`
+- Revenue, excluding grants (% of GDP): `GC.REV.XGRT.GD.ZS`
 
 Data is retrieved for SAARC member countries:
 
