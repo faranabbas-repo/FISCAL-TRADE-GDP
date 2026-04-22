@@ -1,10 +1,31 @@
 ---
-title: "Source"
+title: "Sources"
 format: html
 ---
 
-The data for this project comes from the World Bank’s World Development Indicators (WDI), accessed using the `WDI` R package. I selected three variables: GDP in current US dollars (`NY.GDP.MKTP.CD`), fiscal balance as a % of GDP (`GC.BAL.CASH.GD.ZS`), and trade as % of GDP (`NE.TRD.GNFS.ZS`).
+The data for this project comes from the World Bank's World Development Indicators (WDI), accessed using the `WDI` R package.
 
-Data was retrieved for SAARC member countries: Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka, for the years 2000 to 2024.
+The project uses three indicators:
 
-Cleaning steps included renaming variables, filtering missing values, and excluding observations where any of the three main indicators were `NA`.
+- GDP in current US dollars: `NY.GDP.MKTP.CD`
+- Trade openness as a percentage of GDP: `NE.TRD.GNFS.ZS`
+- Fiscal balance as a percentage of GDP: `GC.BAL.CASH.GD.ZS`
+
+Data is retrieved for SAARC member countries:
+
+- Afghanistan
+- Bangladesh
+- Bhutan
+- India
+- Maldives
+- Nepal
+- Pakistan
+- Sri Lanka
+
+Coverage spans annual observations from 2000 to 2024.
+
+Cleaning steps include:
+
+- renaming indicators into analysis-friendly variable names
+- filtering out observations with missing values in the core variables
+- retaining a consistent regional sample for comparison across time

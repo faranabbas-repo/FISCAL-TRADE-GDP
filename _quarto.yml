@@ -2,12 +2,15 @@ project:
   type: website
 
 website:
-  title: "fiscal-trade-gdp"
+  title: "Fiscal Balance, Trade Openness, and GDP in SAARC"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: sources.qmd
+        text: Sources
+      - href: about.qmd
+        text: About
 
 format:
   html:
